@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\CustomerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 route::post('/signup',[AuthController::class,'signup']);
 route::post('/login',[AuthController::class,'login']);
 route::post('/logout',[AuthController::class,'logout']);
+
+route::resource('customers',CustomerController::class);
